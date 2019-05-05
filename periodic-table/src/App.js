@@ -3,22 +3,16 @@ import "./App.css";
 import elementsData from "./data/elements.json";
 
 const elementsList = elementsData.elements;
+const elementNames = elementsList.map(element => <h1 key={element.number}>{element.symbol}</h1>);
 
-const elementsNames = elementsList.map(element => {
-  for (var key in element) {
-    if (element.hasOwnProperty(key)) {
-      console.log(key + " -> " + element[key]);
-    }
-  }
-});
+// const elementBlock = ;
 
 const elementsKeys = Object.keys(elementsList[0]);
+
 console.log(elementsKeys);
 
-// console.log(display);
-
 function App() {
-  return <div>{elementsNames}</div>;
+  return <div>{elementNames}</div>;
 }
 
 export default App;
